@@ -1,0 +1,18 @@
+<% if @user.try('errors').try('any?') %>
+	<% for message in @user.errors.full_messages %>
+		<div class="offset2 alert alert-error">
+			<%= message  %>
+		</div>
+	<% end %>
+  <% end %>
+
+<div class="span9 offset3 page_center">
+	
+	<%= form_for(@user || User.new) do |f| %>
+		<%= f.text_field :email, :class => "input-xlarge", :placeholder => "Please enter your email address" %>
+		<%= f.submit "Sign Up",:class => "btn lvl_button" %>
+	<% end %>
+	
+</div>
+
+

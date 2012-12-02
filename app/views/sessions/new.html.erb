@@ -1,0 +1,33 @@
+<!-- <h2>Sign in</h2> -->
+
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', :default => "Sign in") %></h1>
+</div>
+
+<%= form_tag sessions_path do %>
+
+<div class="control-group">
+    <%= label_tag :email,nil,:class => 'control-label' %><br />
+
+    <div class="controls">
+      <%= text_field_tag :email, params[:email],:class => 'text_field' %>
+
+    </div>
+</div>
+
+<div class="control-group">
+    <%= label_tag :password,nil,:class => 'control-label' %><br />
+
+    <div class="controls">
+      <%= password_field_tag :password, params[:passwordpassword],:class => 'password_field' %>
+
+    </div>
+</div>
+
+ 
+<div class="form-actions">
+ <%= submit_tag "Sign in", :class => 'btn btn-primary'%>
+
+</div>
+
+<% end %>
